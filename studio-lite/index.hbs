@@ -18,7 +18,10 @@
     </aside>
 
     <section class="post-content rte">
-      {{content}}
+      {{excerpt words="150"}} &hellip; [+]
+      <div>
+        <a class="read-more" href="{{url}}">Read more</a>
+      </div>
     </section>
 
     <footer class="post-footer">
@@ -28,14 +31,6 @@
         <strong>Tags:</strong> {{tags separator=" , "}}
       </div>
       {{/if}}
-
-      <div class="post-share">
-        <a target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}" class="share-facebook"><span>Like</span> <span class="share-count"></span></a>
-
-        <a target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}" class="share-twitter"><span>Tweet</span> <span class="share-count"></span></a>
-
-        <a target="_blank" href="//plus.google.com/share?url={{url absolute="true"}}" class="share-google"><span></span> <span class="share-count">+1</span></a>
-      </div>
 
     </footer>
 
