@@ -1,0 +1,50 @@
+{{!< default}}
+
+<main class="site-content" role="main">
+
+  <h1 class="page-title">Posts tagged {{tag.name}}</h1>
+
+  {{#foreach posts}}
+
+  <article class="{{post_class}}" data-permalink="{{url absolute="true"}}">
+
+    <h1 class="post-title"><a href="{{url}}">{{title}}</a></h1>
+
+    <aside>
+      <div class="post-data">
+        <p>
+          Posted on <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
+          {{#if author}}by {{author.name}}{{/if}}
+        </p>
+      </div>
+    </aside>
+
+    <section class="post-content rte">
+      {{content}}
+    </section>
+
+    <footer class="post-footer">
+
+      {{#if tags}}
+      <div class="post-tags">
+        <strong>Tags:</strong> {{tags separator=" , "}}
+      </div>
+      {{/if}}
+
+      <div class="post-share">
+        <a target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}" class="share-facebook"><span>Like</span> <span class="share-count"></span></a>
+
+        <a target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}" class="share-twitter"><span>Tweet</span> <span class="share-count"></span></a>
+
+        <a target="_blank" href="//plus.google.com/share?url={{url absolute="true"}}" class="share-google"><span></span> <span class="share-count">+1</span></a>
+      </div>
+
+    </footer>
+
+  </article>
+
+  {{/foreach}}
+
+  {{pagination}}
+
+</main>
